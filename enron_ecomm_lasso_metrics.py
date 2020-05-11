@@ -116,7 +116,7 @@ def metrics(x):
     cm = matrix_to_dicts(confusion_matrix, labels)
     test_results = dict(ROC=ROC,
                    auc=auc,
-                   f2=f2,
+                   f2_score=f2,
                    confusion_matrix=cm)    
 
     yield test_results
