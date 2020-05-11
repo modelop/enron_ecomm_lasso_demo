@@ -10,7 +10,7 @@
           <text></text>
         </inputExpression>
       </input>
-      <input id="InputClause_08e7ybd" label="f2" camunda:inputVariable="f2">
+      <input id="InputClause_08e7ybd" label="f2_score" camunda:inputVariable="f2_score">
         <inputExpression id="LiteralExpression_0nr86e9" typeRef="double" expressionLanguage="feel">
           <text></text>
         </inputExpression>
