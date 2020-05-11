@@ -77,6 +77,77 @@ def action(x):
     output.columns = ['id', 'content', 'prediction']
     output = output.to_dict(orient='records')
     yield output
+    
+def get_shap():
+    return {
+        "strategi": 3.2520682958749694,
+        "indic": 0.7102795675925868,
+        "net": 0.3541640953338466,
+        "research": 2.340609152949877,
+        "market": 1.6368844559196445,
+        "version": 1.9101731885557005,
+        "good": 1.3562284993616274,
+        "mail": 0.6928553560354906,
+        "bid": 2.8162293879415072,
+        "data": 3.387712516393189,
+        "report": 0.47704432407553465,
+        "greet": 2.754767300818468,
+        "said": 4.54813893155902,
+        "approach": 5.799971287318539,
+        "develop": 3.3643937399880004,
+        "law": 2.196729052019291,
+        "normal": 2.681564509767407,
+        "pocket": 1.2258033392225045,
+        "trader": 0.8864414506427811,
+        "trigger": 1.9309807702640416,
+        "label": 2.885248298256796,
+        "softwar": 1.995336285501284
+    }
+
+def get_bias():
+    return {
+        "attributeAudited": "Gender",
+        "referenceGroup": "Male",
+        "fairnessThreshold": "80%",
+        "fairnessMeasures": [
+            {
+                "label": "Equal Parity",
+                "result": "Failed",
+                "group": "Female",
+                "disparity": 0.75
+            },
+            {
+                "label": "Proportional Parity",
+                "result": "Passed",
+                "group": None,
+                "disparity": 1.05
+            },
+            {
+                "label": "False Positive Rate Parity",
+                "result": "Passed",
+                "group": "Female",
+                "disparity": 0.97
+            },
+            {
+                "label": "False Discovery Rate Parity",
+                "result": "Passed",
+                "group": "Female",
+                "disparity": 0.88
+            },
+            {
+                "label": "False Negative Rate Parity",
+                "result": "Passed",
+                "group": "Female",
+                "disparity": 1.05
+            },
+            {
+                "label": "False Omission Rate Parity",
+                "result": "Passed",
+                "group": "Female",
+                "disparity": 0.93
+            }
+        ]
+        }
 
 def matrix_to_dicts(matrix, labels):
     cm = []
@@ -114,10 +185,15 @@ def metrics(x):
     ROC = [{'fpr': x[0], 'tpr':x[1]} for x in list(zip(fpr, tpr))]
     labels = ['Compliant', 'Non-Compliant']
     cm = matrix_to_dicts(confusion_matrix, labels)
+    shap = get_shap()
+    bias = get_bias()
     test_results = dict(ROC=ROC,
                    auc=auc,
                    f2_score=f2,
-                   confusion_matrix=cm)    
+                   confusion_matrix=cm,
+                   bias=bias,
+                   shap=shap
+                   )    
 
     yield test_results
 
