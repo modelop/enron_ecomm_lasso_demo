@@ -177,7 +177,7 @@ def metrics(x):
     predictions = pd.Series(probabilities > threshold, index=x.index).astype(int) 
     
     confusion_matrix = sklearn.metrics.confusion_matrix(actuals, predictions)
-    fpr,tpr,thres = sklearn.metrics.roc_curve(actuals, predictions)
+    fpr,tpr,thres = sklearn.metrics.roc_curve(actuals, probabilities)
 
     auc = sklearn.metrics.auc(fpr, tpr)
     f2 = sklearn.metrics.fbeta_score(actuals, predictions, beta=2)
