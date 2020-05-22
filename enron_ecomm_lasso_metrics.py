@@ -7,8 +7,6 @@ import scipy
 import sklearn
 import sys
 
-# A Comment
-
 def remove_proper_nouns(string):
     list_of_words = string.split()
     tagged_low = nltk.tag.pos_tag(list_of_words)
