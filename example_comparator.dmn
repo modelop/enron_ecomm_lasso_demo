@@ -19,7 +19,7 @@
       <output id="OutputClause_05h1co6" label="reason" name="reason" typeRef="string" />
       <rule id="DecisionRule_0aznir8">
         <inputEntry id="UnaryTests_1x4xf13">
-          <text>&lt;= 0.90</text>
+          <text>&lt;= 0.85</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1wcb8sj">
           <text></text>
@@ -28,7 +28,7 @@
           <text>false</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_07v4w07">
-          <text>"AUC under threshold of 0.90"</text>
+          <text>"AUC under threshold of 0.85"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0ggwcp6">
