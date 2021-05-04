@@ -1,7 +1,8 @@
 {
   "tags": ["enron_ecomm"],
+  "name": "enron_ecomm_lasso_demo",
   "description": "A demonstration model for analyzing enron communications for insider trading",
-  "custom" {
+  "custom" : {
     "exampleNum": 1,
     "exampleString": "test"
   }
