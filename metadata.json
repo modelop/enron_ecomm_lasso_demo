@@ -1,0 +1,8 @@
+{
+  "tags": ["enron_ecomm"],
+  "description": "A demonstration model for analyzing enron communications for insider trading",
+  "custom" {
+    "exampleNum": 1,
+    "exampleString": "test"
+  }
+}
