@@ -1,5 +1,5 @@
 {
-  "tags": ["ENRON_ECOMM"],
+  "tags": ["ENRON_ECOMM", "VALIDATE"],
   "name": "enron_ecomm_lasso_demo",
   "description": "A demonstration model for analyzing enron communications for insider trading",
   "custom" : {
